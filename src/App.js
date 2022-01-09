@@ -15,6 +15,7 @@ class App extends React.Component{
       selectedCity: '',
       locationObject: {},
       weatherArray: [],
+      movieArray: [],
     }
   }
 
@@ -33,27 +34,40 @@ class App extends React.Component{
     
     console.log(this.state.locationObject);
     this.getWeather();
+    this.getMovies();
   }
 
   getWeather = async () => {
-    const url = `http://localhost:3001/weatherData?city=${this.state.selectedCity}&lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`;
-  console.log(`URL= ${url}`);
-  try{
-    const response = await axios.get(url);
-    this.setState({weatherArray: response.data});
-  } catch (e){
-    alert(e + ' Weather data is unavailable for this city');
-    this.setState({weatherArray: []});
+    const url = `http://localhost:3001/weatherData?lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`;
+    console.log(`URL= ${url}`);
+    try{
+      const response = await axios.get(url);
+      this.setState({weatherArray: response.data});
+    } catch (e){
+      alert(e + ' Weather data is unavailable for this city');
+      this.setState({weatherArray: []});
+    }
+    console.log(this.state.weatherArray);
   }
-  
-  console.log(this.state.weatherArray);
-}
+
+  getMovies = async () => {
+    const url = `http://localhost:3001/movies?city=${this.state.selectedCity}`;
+    console.log(`URL= ${url}`);
+    try{
+      const response = await axios.get(url);
+      this.setState({movieArray: response.data});
+    } catch (e){
+      console.log(e + ' No movies were found for this city.');
+      this.setState({movieArray: [{original_title: 'No movies found.', overview: 'Try searching for another city, you might find one that has a movie related to it!'}]});
+    }
+    console.log(this.state.movieArray);
+  }
 
   render(){
     return(
       <>
       <Header/>
-      <Main getSelectedCity={this.getSelectedCity} getLocation={this.getLocation} locationObject={this.state.locationObject} weatherArray={this.state.weatherArray}/>
+      <Main getSelectedCity={this.getSelectedCity} getLocation={this.getLocation} locationObject={this.state.locationObject} weatherArray={this.state.weatherArray} movieArray={this.state.movieArray}/>
       <Footer/>
       </>
     );
