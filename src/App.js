@@ -36,7 +36,7 @@ class App extends React.Component{
   }
 
   getWeather = async () => {
-    const url = `http://localhost:3001/weatherData?city=${this.state.selectedCity}}&lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`;
+    const url = `http://localhost:3001/weatherData?city=${this.state.selectedCity}&lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`;
   console.log(`URL= ${url}`);
   try{
     const response = await axios.get(url);
