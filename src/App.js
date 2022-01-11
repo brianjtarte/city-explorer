@@ -51,7 +51,7 @@ class App extends React.Component{
   }
 
   getMovies = async () => {
-    const url = `https://city-explorer-301n24.herokuapp.com/movies?query=${this.state.selectedCity}`;
+    const url = `https://city-explorer-301n24.herokuapp.com/movies?city=${this.state.selectedCity}`;
     console.log(`URL= ${url}`);
     try{
       const response = await axios.get(url);
