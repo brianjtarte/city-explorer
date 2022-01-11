@@ -38,7 +38,7 @@ class App extends React.Component{
   }
 
   getWeather = async () => {
-    const url = `http://https://city-explorer-301n24.herokuapp.com/weatherData?lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`;
+    const url = `https://city-explorer-301n24.herokuapp.com/weatherData?lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`;
     console.log(`URL= ${url}`);
     try{
       const response = await axios.get(url);
@@ -51,7 +51,7 @@ class App extends React.Component{
   }
 
   getMovies = async () => {
-    const url = `http://https://city-explorer-301n24.herokuapp.com:3001/movies?city=${this.state.selectedCity}`;
+    const url = `https://city-explorer-301n24.herokuapp.com:3001/movies?city=${this.state.selectedCity}`;
     console.log(`URL= ${url}`);
     try{
       const response = await axios.get(url);
