@@ -3,7 +3,6 @@ import React from 'react';
 import LocationForm from './LocationForm';
 import Weather from './Weather';
 import Movies from './Movies';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Main extends React.Component{
     renderCityName = () => {
