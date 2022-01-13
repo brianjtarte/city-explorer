@@ -3,6 +3,7 @@ import React from 'react';
 import LocationForm from './LocationForm';
 import Weather from './Weather';
 import Movies from './Movies';
+import Row from 'react-bootstrap/Row'
 
 class Main extends React.Component{
     renderCityName = () => {
@@ -23,7 +24,9 @@ class Main extends React.Component{
         <>
             <LocationForm getSelectedCity={this.props.getSelectedCity} getLocation={this.props.getLocation}/>
             {this.renderCityName()}
+            <Row xs={1} md={2} lg={4} className="g-4">
             <Weather weatherArray={this.props.weatherArray}/>
+            </Row>
             <Movies movieArray={this.props.movieArray}/>
         </>
         );

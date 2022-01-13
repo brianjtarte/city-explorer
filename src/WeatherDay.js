@@ -6,7 +6,7 @@ class WeatherDay extends React.Component{
   render(){
     return(
       <>
-            <Card key={this.props.idx}>
+            <Card style={{ width: '18rem' }} key={this.props.idx}>
               <Card.Body>
                 <Card.Title>
                 {this.props.forecast.date}
