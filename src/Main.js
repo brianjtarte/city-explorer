@@ -4,6 +4,7 @@ import LocationForm from './LocationForm';
 import Weather from './Weather';
 import Movies from './Movies';
 import Row from 'react-bootstrap/Row'
+import Container from 'react-bootstrap/Container'
 
 class Main extends React.Component{
     renderCityName = () => {
@@ -22,12 +23,22 @@ class Main extends React.Component{
     render(){
         return(
         <>
+        <Container >
             <LocationForm getSelectedCity={this.props.getSelectedCity} getLocation={this.props.getLocation}/>
             {this.renderCityName()}
-            <Row xs={1} md={2} lg={4} className="g-4">
+            <Row xs={1} md={5} lg={6} className="g-4">
             <Weather weatherArray={this.props.weatherArray}/>
             </Row>
+            </Container>
+            <Container>
+                <div className = 'movieData'>
+            <Row xs={1} md={2} lg={4} className="g-4"> 
             <Movies movieArray={this.props.movieArray}/>
+            </Row>
+            </div>
+            </Container>
+           
+        
         </>
         );
     };

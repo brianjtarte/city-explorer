@@ -37,7 +37,7 @@
   }
 }
 
-.displayedMap {
+ .displayedMap {
   display: flex;
   flex-direction: column;
 align-items: center;
@@ -46,8 +46,15 @@ align-items: center;
 .displayedMap img {
   border-radius: 20px;
   box-shadow: 5px 5px 5px;
+  margin-bottom: 25px;
 }
 .locationForm {
   margin-left: 50px;
   margin-top: 50px;
-} 
+}  
+
+.movieData {
+  margin: auto;
+  
+}
+

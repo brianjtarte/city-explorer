@@ -1,20 +1,21 @@
 import './App.css';
 import React from 'react';
+import Movie from './Movie';
+import Accordion from 'react-bootstrap/Accordion';
 
 class Movies extends React.Component{
   render(){
     return(
       <>
+
+        <Accordion>
         {this.props.movieArray.map((movie, idx) => (
-            <div key={idx}>
-                <h4>
-                    {movie.original_title}
-                </h4>
-                <p>
-                    {movie.overview}
-                </p>
-            </div>
+
+          <Movie movie = {movie} idx = {idx}/>
+            
         ))}
+
+          </Accordion>
       </>
     );
   };

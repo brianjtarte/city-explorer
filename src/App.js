@@ -39,7 +39,9 @@ class App extends React.Component{
   }
 
   getWeather = async () => {
-    const url = `https://city-explorer-301n24.herokuapp.com/weather?lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`;
+    // const url = `https://city-explorer-301n24.herokuapp.com/weather?lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`;
+
+    const url = `http://localhost:3001/weather?lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`
     console.log(`URL= ${url}`);
     try{
       const response = await axios.get(url);
