@@ -1,15 +1,19 @@
 import './App.css';
 import React from 'react';
-import Movie from './Movie';
 
 class Movies extends React.Component{
   render(){
     return(
       <>
         {this.props.movieArray.map((movie, idx) => (
-
-          <Movie movie = {movie} />
-            
+            <div key={idx}>
+                <h4>
+                    {movie.original_title}
+                </h4>
+                <p>
+                    {movie.overview}
+                </p>
+            </div>
         ))}
       </>
     );
