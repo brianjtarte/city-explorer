@@ -39,9 +39,12 @@ class App extends React.Component{
   }
 
   getWeather = async () => {
-    // const url = `https://city-explorer-301n24.herokuapp.com/weather?lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`;
+    // USE THIS URL FOR DEPLOYS:
+    const url = `https://city-explorer-301n24.herokuapp.com/weather?lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`;
 
-    const url = `http://localhost:3001/weather?lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`
+    // USE THIS URL WHEN TESTING ON THE LOCAL MACHINE:
+    // const url = `http://localhost:3001/weather?lat=${this.state.locationObject.lat}&lon=${this.state.locationObject.lon}`
+
     console.log(`URL= ${url}`);
     try{
       const response = await axios.get(url);
@@ -54,7 +57,12 @@ class App extends React.Component{
   }
 
   getMovies = async () => {
+    // USE THIS URL FOR DEPLOYS:
     const url = `https://city-explorer-301n24.herokuapp.com/movies?city=${this.state.selectedCity}`;
+
+    // USE THIS URL WHEN TESTING ON THE LOCAL MACHINE:
+    // const url = `http://localhost:3001/movies?city=${this.state.selectedCity}`;
+
     console.log(`URL= ${url}`);
     try{
       const response = await axios.get(url);

@@ -32,7 +32,7 @@ class Main extends React.Component{
             </Container>
             <Container>
                 <div className = 'movieData'>
-            <Row xs={1} md={2} lg={4} className="g-4"> 
+            <Row className="g-4"> 
             <Movies movieArray={this.props.movieArray}/>
             </Row>
             </div>
