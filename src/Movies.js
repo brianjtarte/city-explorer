@@ -9,13 +9,10 @@ class Movies extends React.Component{
       <>
 
         <Accordion>
-        {this.props.movieArray.map((movie, idx) => (
-
-          <Movie movie = {movie} idx = {idx}/>
-            
-        ))}
-
-          </Accordion>
+          {this.props.movieArray.map((movie, idx) => (
+            <Movie movie = {movie} idx = {idx}/>
+          ))}
+        </Accordion>
       </>
     );
   };
